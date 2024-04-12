@@ -6,14 +6,14 @@
         <title>DevStagram - @yield('titulo')</title>
         @stack('style')
         @vite(['resources/css/app.css','resources/js/app.js'])
+        @livewireStyles
     </head>
     <body class="bg-gray-100" >
         <header class="p-5 border-b bg-white shadow">
             <div class="container mx-auto flex justify-between items-center">
-                <h1 class="text-3xl font-black">
+                <a href="{{ route('home') }}" class="text-3xl font-black">
                     DevStagram
-                </h1>
-
+                </a>
                 @auth
                     <nav class="flex gap-2 item-center">
                         <a class ="flex item-center gap-2 bg-white border p-2 text-gray-600 rounded text-sm uppercase font-bold cursor-pointer" href=" {{ Route('posts.create')}}">
@@ -48,5 +48,6 @@
         <footer class="mt-10 text-center p-5 text-gray-500 font-bold uppercase">
             DevStagram - Todos los derechos reservados {{ now()->year }}
         </footer>
+        @livewireScripts
     </body>
 </html>
